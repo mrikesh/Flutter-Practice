@@ -207,31 +207,33 @@ class CreateAccount extends StatelessWidget {
           child: Column(
             children: [
               Text(
-              "Register",
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
+                "Register",
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
+                textAlign: TextAlign.start,
               ),
-              textAlign: TextAlign.start,
+              SizedBox(
+                height: 10,
               ),
-            SizedBox(
-              height: 10,
-            ),  
-            Text(
-              "Easy and Quick",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w200,
+              Text(
+                "Easy and Quick",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w200,
+                  color: Colors.blue,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
+              SizedBox(
+                height: 15,
+              ),
               TextField(
                 decoration: InputDecoration(
                   hintText: "First Name",
                   border: OutlineInputBorder(),
-                  ),
+                ),
               ),
               SizedBox(
                 height: 15,
@@ -240,7 +242,7 @@ class CreateAccount extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Last Name",
                   border: OutlineInputBorder(),
-                  ),
+                ),
               ),
               SizedBox(
                 height: 15,
@@ -249,7 +251,7 @@ class CreateAccount extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Email",
                   border: OutlineInputBorder(),
-                  ),
+                ),
               ),
               SizedBox(
                 height: 15,
@@ -258,7 +260,7 @@ class CreateAccount extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Password",
                   border: OutlineInputBorder(),
-                  ),
+                ),
               ),
               SizedBox(
                 height: 15,
@@ -267,8 +269,29 @@ class CreateAccount extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Re-type Password",
                   border: OutlineInputBorder(),
-                  ),
+                ),
               ),
+              SizedBox(
+                  height: 15,
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    );
+                  },
+                  child: Text("Confirm"),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(16.0),
+                    minimumSize: Size(485, 50),
+                    backgroundColor: Colors.blue,
+                    primary: Colors.white,
+                    textStyle: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
             ],
           ),
         ),
@@ -291,21 +314,23 @@ class ForgetPassword extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Register",
+              "Create New Password",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
+                color: Colors.blue,
               ),
               textAlign: TextAlign.start,
-              ),
+            ),
             SizedBox(
               height: 10,
-            ),  
+            ),
             Text(
               "Easy and Quick",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w200,
+                color: Colors.blue,
               ),
             ),
             SizedBox(
@@ -315,7 +340,7 @@ class ForgetPassword extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: "Enter New Password",
                 border: OutlineInputBorder(),
-                ),
+              ),
             ),
             SizedBox(
               height: 15,
@@ -324,7 +349,28 @@ class ForgetPassword extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: "Re-type New Password",
                 border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+              child: Text("Confirm"),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(16.0),
+                minimumSize: Size(485, 50),
+                backgroundColor: Colors.blue,
+                primary: Colors.white,
+                textStyle: TextStyle(
+                  fontSize: 18,
                 ),
+              ),
             ),
           ],
         ),
@@ -332,4 +378,3 @@ class ForgetPassword extends StatelessWidget {
     );
   }
 }
-
