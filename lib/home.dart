@@ -88,6 +88,7 @@ class _HomeState extends State<Home> {
                         child: Text("Create Account"),
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(16.0),
+                          backgroundColor: Colors.transparent,
                           textStyle: TextStyle(
                             fontSize: 18,
                           ),
@@ -104,6 +105,7 @@ class _HomeState extends State<Home> {
                         child: Text("Forget Password?"),
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(16.0),
+                          backgroundColor: Colors.transparent,
                           textStyle: TextStyle(
                             fontSize: 18,
                           ),
@@ -119,42 +121,6 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            // DrawerHeader(
-            //   child:Text(
-            //     "Hello",
-            //     style: TextStyle(color: Colors.white)),
-            //   decoration: BoxDecoration(color: Colors.indigo),
-            //    ),
-            UserAccountsDrawerHeader(
-              accountName: Text("User Name"),
-              accountEmail: Text("user123@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Account"),
-              subtitle: Text("Personal"),
-              trailing: Icon(Icons.edit),
-            ),
-            ListTile(
-              leading: Icon(Icons.email),
-              title: Text("Email"),
-              subtitle: Text("user@email.com"),
-              trailing: Icon(Icons.send),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.edit),
       ),
     );
   }
