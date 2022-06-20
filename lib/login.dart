@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:app2/home.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  TextEditingController inputController1 = new TextEditingController();
+  TextEditingController inputController2 = new TextEditingController();
+  String _text1 = '';
+  String _text2 = '';
 
   @override
   Widget build(BuildContext context) {
@@ -63,17 +73,46 @@ class Login extends StatelessWidget {
           children: [
             TextField(
               decoration: InputDecoration(
-                hintText: "First Name",
-                border: OutlineInputBorder()
-              ),
+                  hintText: "First Name", border: OutlineInputBorder()),
+              controller: inputController1,
             ),
             SizedBox(
               height: 15,
             ),
             TextField(
               decoration: InputDecoration(
-                hintText: "Last Name",
-                border: OutlineInputBorder()
+                  hintText: "Last Name", border: OutlineInputBorder()),
+              controller: inputController2,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _text1 = inputController1.text;
+                  _text2 = inputController2.text;
+                });
+              },
+              child: Text("Submit"),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(16.0),
+                minimumSize: Size(150, 50),
+                backgroundColor: Colors.blue,
+                primary: Colors.white,
+                textStyle: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              '$_text1 $_text2',
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
